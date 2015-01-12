@@ -1,0 +1,10 @@
+{% extends "main.html.twig" %}
+{% block body %}
+	{% include "menu.html.twig" with {'return': 'apps'}  %}
+	<br><br><br><br><br>
+	<div class="tokenizer">
+		<a  href="{{ path('token') }}">Generar nuevo código</a>
+	</div>
+	<div class="bottom"></div>
+{% endblock %}
+

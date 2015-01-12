@@ -1,0 +1,39 @@
+{% extends "main.html.twig" %}
+{% block body %}
+	{% include "menu.html.twig" with {'return': 'apps'} %}
+	<div class="mainSwitch">
+		{% if apps.data.operations['Ash0Latch1Durbatuluk'].status == 'on' %}
+			<a href="{{ path('switch', {'operator': 'Ash0Latch1Durbatuluk', 'mode': 'off' }) }}">
+				<div class="button off"><i class="fa fa-unlock fa-3x"></i></div>
+			</a>
+		{% elseif apps.data.operations['Ash0Latch1Durbatuluk'].status == 'off' %}
+			<a href="{{ path('switch', {'operator': 'Ash0Latch1Durbatuluk', 'mode': 'on' }) }}">
+				<div class="button on"><i class="fa fa-lock fa-3x"></i></div>
+			</a>
+		{% endif %}	
+	</div>	
+	{% for key, app in apps.data.operations %}
+		{% if key != 'Ash0Latch1Durbatuluk' %}
+			{% if key == id %}
+				{% for operationkey, operation in app.operations %}
+					<div class="operations">
+						<span>{{ operation.name }}</span>
+						{% if operation.status == 'on' %}
+							<a href="{{ path('switch', {'operator': operationkey, 'mode': 'off'  }) }}">
+								<div class="button off"><i class="fa fa-unlock"></i></div>
+							</a>
+						{% elseif operation.status == 'off' %}
+							<a href="{{ path('switch', {'operator': operationkey, 'mode': 'on'  }) }}">
+								<div class="button on"><i class="fa fa-lock"></i></div>
+							</a>
+						{% endif %}
+					</div class="operations">
+				{% endfor %}
+			{% endif %}	
+		{% endif %}
+	{% endfor %}
+	<div class="bottom">
+		<a href="{{ path('new-service') }}">Añadir nuevo servicio</a>
+	</div>
+{% endblock %}
+

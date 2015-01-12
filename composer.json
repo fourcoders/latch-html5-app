@@ -1,0 +1,13 @@
+{
+    "require": {
+        "silex/silex": "~1.2",
+        "symfony/twig-bridge": "~2.3",
+        "guzzlehttp/guzzle": "~5.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "2.7.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    }
+}

@@ -1,0 +1,18 @@
+{% extends "main.html.twig" %}
+{% block body %}
+
+	{% include "menu.html.twig" with {'return': 'apps'}  %}
+	<div class="tokencontainer">
+		<br>
+		<h1>
+			{{ token.data.token }}
+		</h1>
+		<br>
+		tiempo restante
+		<br>
+		{{ token.data.expires }}
+	</div>
+	<div class="bottom"></div>
+	
+{% endblock %}
+

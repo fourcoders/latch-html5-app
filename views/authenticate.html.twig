@@ -1,0 +1,23 @@
+{% extends "main.html.twig" %}
+{% block body %}
+	{% include "menu.html.twig" with {'return': 'main'}  %}
+	<div class="login">
+		<form action="{{ path('login') }}" method="POST">
+			<br><br><br><br><br><br>
+			{% if error == true %}
+				<p>Error de autenticación</p>
+			{% endif %}
+			<p>
+				<input type="text" name="username" placeholder="username">
+			</p>
+			<p>
+				<input type="password" name="password" placeholder="password">
+			</p>
+			<p>
+				<input type="submit" value="Entrar">
+			</p>
+		</form>
+	</div>
+	<div class="bottom"></div>
+{% endblock %}
+
