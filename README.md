@@ -14,16 +14,22 @@ Go to the directory.
 
 Download composer (Only if you don´t have it).
 
-	curl -sS https://getcomposer.org/installer | php
+```php
+curl -sS https://getcomposer.org/installer | php
+```
 
 Execute composer for dependences.
 
-	php composer.phar install
+```php
+php composer.phar install
+```
 
 Run with the embed php server.
 
-	mkdir web
-	php -S localhost:8000
+```php
+mkdir web
+php -S localhost:8000
+```
 
 Visit in your prefer browser.
 
